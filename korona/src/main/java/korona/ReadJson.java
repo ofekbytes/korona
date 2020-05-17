@@ -2,6 +2,7 @@ package korona;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.Reader;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
@@ -17,8 +18,15 @@ public class ReadJson {
 		Gson gson = new Gson();
 
 		try {
-			Object object = gson.fromJson(new FileReader("/home/yaron/workspace-sts/korona/korona/src/data.json"),
-					Object.class);
+				Reader reader = new FileReader("/home/yaron/git-ofekbytes/korona/korona/src/main/java/korona/data.json");
+				
+			// delete //
+			//Object object = gson.fromJson(new FileReader("/home/yaron/git-ofekbytes/korona/korona/src/main/java/korona/data.json"), Object.class);
+			// old path: /home/yaron/workspace-sts/korona/korona/src/data.json //
+			 
+			
+			
+			
 
 		} catch (JsonSyntaxException e) {
 			// TODO Auto-generated catch block

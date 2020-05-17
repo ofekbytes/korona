@@ -13,7 +13,9 @@ public class Korona {
 	
 	
 	public static void main(String[] args) {
-		ReadJson rj = new ReadJson();
+		//ReadJson rj = new ReadJson();
+		
+		System.out.println("test");
 		
 
 	}
