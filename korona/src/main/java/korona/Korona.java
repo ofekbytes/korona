@@ -1,60 +1,54 @@
 package korona;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Iterator;
+import java.io.IOException;
+import java.io.Reader;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import com.google.gson.Gson;
 
 public class Korona {
 
-	public Korona() {
-		// TODO Auto-generated constructor stub
-	}
-
-	
-	public void printResult(double recovery_cases, double total_cases) {	
-		System.out.println ( (recovery_cases / total_cases) * 100 );
+	public double stringToDouble(String value)
+	{
+		return (Double.parseDouble(value));
 	}
 	
-	
-	public void test1() {
+	public void printResult(String recovery_cases , String stTotalCases) {
 		
-		JSONParser parser = new JSONParser();
-		try {
-			Object obj = parser.parse(new FileReader("/home/yaron/git-ofekbytes/korona/korona/src/main/java/korona/data.json"));
- 
-			JSONObject jsonObject = (JSONObject) obj;
-			JSONArray korona = (JSONArray) jsonObject.get("Company List");
+		System.out.print("Percentage of recovery_cases are ");
+		//System.out.print( (stringToDouble(stTotalCases) / stringToDouble(recovery_cases) * 100) );
+		System.out.print(stringToDouble(recovery_cases));
+
+	}
+	
+	public static void main(String[] args) {
+		
+		String stFileName = "";
+		
+		Gson gson = new Gson();
+		Korona korona = new Korona();
+		
+		
+		
+		try (Reader reader = new FileReader("/home/yaron/git-ofekbytes/korona/korona/src/main/java/korona/data.json")) {
 			
-//			Iterator<JSONObject> iterator = korona.iterator();
-//			while (iterator.hasNext()) {
-//				System.out.println(iterator.next());
-//			}
+			Data data = gson.fromJson(reader, Data.class);
 			
-		} catch (Exception e) {
+			
+			data.setStTotal_cases(data.getData().get("total_cases") );
+			data.setStRecovery_cases(data.getData().get("recovery_cases"));
+			
+			korona.printResult (data.getStRecovery_cases() , data.getStTotal_cases() );
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	}
-	
-	
-	/****
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		//ReadJson rj = new ReadJson();
-		
-		Korona k = new Korona();
-		k.test1();
-		
-		System.out.println("test");
-
 	}
 
-	
 }
-
-

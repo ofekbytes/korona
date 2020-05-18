@@ -1,33 +1,40 @@
 package korona;
 
+import java.util.List;
+import java.util.Map;
+
 public class Data {
 
-	private String stTotalCases;  //total_cases
-	private String stRecoveryCases;  //recovery_cases
+	private Map <String, String> data;
 	
-	
+	private String stTotal_cases;
+	private String stRecovery_cases;
 
-	public String getStTotalCases() {
-		return stTotalCases;
+	// "data" - 
+	public Map<String, String> getData() {
+		return data;
+	}
+	public void setData(Map<String, String> data) {
+		this.data = data;
 	}
 	
-	public void setStTotalCases(String stTotalCases) {
-		this.stTotalCases = stTotalCases;
-	}
-
-
-	public String getStRecoveryCases() {
-		return stRecoveryCases;
-	}
-
-	public void setStRecoveryCases(String stRecoveryCases) {
-		this.stRecoveryCases = stRecoveryCases;
-	}
 	
+	// "data" - inner field
+	public String getStTotal_cases() {
+		return stTotal_cases;
+	}
+	public void setStTotal_cases(String stTotal_cases) {
+		this.stTotal_cases = stTotal_cases;
+	}
+	public String getStRecovery_cases() {
+		return stRecovery_cases;
+	}
+	public void setStRecovery_cases(String stRecovery_cases) {
+		this.stRecovery_cases = stRecovery_cases;
+	}
 
-
-
-	// constructor
-	public Data() { }
+	
+	
+	
 
 }
