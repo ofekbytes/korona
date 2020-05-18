@@ -3,10 +3,10 @@ package korona;
 public class Data {
 
 	private String stTotalCases;  //total_cases
-	private String stRecovery_cases;  //recovery_cases
+	private String stRecoveryCases;  //recovery_cases
 	
 	
-	
+
 	public String getStTotalCases() {
 		return stTotalCases;
 	}
@@ -15,7 +15,14 @@ public class Data {
 		this.stTotalCases = stTotalCases;
 	}
 
-	
+
+	public String getStRecoveryCases() {
+		return stRecoveryCases;
+	}
+
+	public void setStRecoveryCases(String stRecoveryCases) {
+		this.stRecoveryCases = stRecoveryCases;
+	}
 	
 
 
