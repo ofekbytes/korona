@@ -12,12 +12,27 @@ public class Korona {
 	/// constructor ///
 	public Korona() { }
 	
+	public void userInstruction() {
+		System.out.println("Task: ");
+		System.out.println("Print the 'closed cases recovered percentage'");
+		System.out.print("The 'closed cases recovered percentage' is::: ");
+	}
+	
 	public static void main(String[] args) {
 		
+		Korona korona = new Korona();
+		
 		///---[Solution1 --> Data1]----///
-		/// Solution1 solution1 = new Solution1();
+		// get percentage from json file - no calculation
+		korona.userInstruction();
+		Solution1 solution1 = new Solution1();
+
+		System.out.println("\n");
 		
 		///---[Solution2 --> Data2]----///
+		// get percentage from json file and calculate the percentage.
+		// (min / max) * 100
+		korona.userInstruction();
 		Solution2 solution2 = new Solution2();
 		
 	}//main//

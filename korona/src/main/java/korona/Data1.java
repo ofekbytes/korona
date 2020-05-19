@@ -8,7 +8,6 @@ public class Data1 {
 	private String stTotal_cases;
 	private String stRecovery_cases;
 
-	// "data" -
 	public Map<String, String> getData() {
 		return data;
 	}
