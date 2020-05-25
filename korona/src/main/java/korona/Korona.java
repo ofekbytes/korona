@@ -35,5 +35,9 @@ public class Korona {
 		korona.userInstruction();
 		Solution2 solution2 = new Solution2();
 		
+
+		System.out.println("\n");
+		Solution3 solution3 = new Solution3();
+		
 	}//main//
 }//class//
