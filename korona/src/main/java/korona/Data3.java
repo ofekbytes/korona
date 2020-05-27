@@ -1,5 +1,6 @@
 package korona;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +24,54 @@ public class Data3 {
 	private String active_cases_critical_percentage;
 	private String general_death_rate;
 
+	
+	
+	
+	
+	public Data3(String total_cases, String recovery_cases, String death_cases,
+			String last_update, String currently_infected, String cases_with_outcome,
+			String mild_condition_active_cases, String critical_condition_active_cases, String recovered_closed_cases,
+			String death_closed_cases, String closed_cases_recovered_percentage, String closed_cases_death_percentage,
+			String active_cases_mild_percentage, String active_cases_critical_percentage, String general_death_rate) {
+		super();
+		this.data = data;
+		this.total_cases = total_cases;
+		this.recovery_cases = recovery_cases;
+		this.death_cases = death_cases;
+		this.last_update = last_update;
+		this.currently_infected = currently_infected;
+		this.cases_with_outcome = cases_with_outcome;
+		this.mild_condition_active_cases = mild_condition_active_cases;
+		this.critical_condition_active_cases = critical_condition_active_cases;
+		this.recovered_closed_cases = recovered_closed_cases;
+		this.death_closed_cases = death_closed_cases;
+		this.closed_cases_recovered_percentage = closed_cases_recovered_percentage;
+		this.closed_cases_death_percentage = closed_cases_death_percentage;
+		this.active_cases_mild_percentage = active_cases_mild_percentage;
+		this.active_cases_critical_percentage = active_cases_critical_percentage;
+		this.general_death_rate = general_death_rate;
+	}
+
+	public void printAll() {
+		
+		System.out.println( "Get All Data From Getter"
+							+ "\n Total_cases::  "  + getTotal_cases()
+							+ "\n Recovery_cases::  " + getRecovery_cases()
+							+ "\n Death_cases::  " + getDeath_cases()
+							+ "\n Last_update::  " + getLast_update()
+							+ "\n Currently_infected::  " + getCurrently_infected()
+							+ "\n Cases_with_outcome::  " + getCases_with_outcome()
+							+ "\n Mild_condition_active_cases::  " + getMild_condition_active_cases()
+							+ "\n Critical_condition_active_cases::  " + getCritical_condition_active_cases()
+							+ "\n Recovered_closed_cases::  " + getRecovered_closed_cases()
+							+ "\n Death_closed_cases::  " + getDeath_closed_cases()
+							+ "\n Closed_cases_recovered_percentage::  " + getClosed_cases_recovered_percentage()
+							+ "\n Closed_cases_death_percentage::  " + getClosed_cases_death_percentage()
+							+ "\n Active_cases_mild_percentage::  " + getActive_cases_mild_percentage()
+							+ "\n Active_cases_critical_percentage::  " + getActive_cases_critical_percentage()
+							+ "\n General_death_rate::  " + getGeneral_death_rate() );
+	}
+	
 	public Map<String, String> getData() {
 		return data;
 	}
